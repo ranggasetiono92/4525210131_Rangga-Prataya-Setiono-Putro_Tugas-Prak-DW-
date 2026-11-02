@@ -1,0 +1,168 @@
+/* --- ROOT VARIABLES --- */
+:root {
+    --primary: #573CFA;
+    --primary-hover: #452ee5;
+    --secondary: #FB8D1A;
+    --neutral-dark: #1C1A27;
+    --neutral-light: #F9F9FB;
+    --white: #FFFFFF;
+    --danger: #E8083E;
+    --success: #02864A;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(28, 26, 39, 0.08);
+}
+
+/* --- PERBAIKAN NAVBAR SESUAI GAMBAR --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ada3bc;
+    margin: 0;
+    padding: 0; /* Menghilangkan padding body agar navbar menempel penuh di atas */
+}
+
+nav {
+    background: linear-gradient(90deg, #4f32ff 0%, #6431ff 60%, #8531ff 100%);
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #ffffff; /* Memastikan lingkar logo berwarna putih bersih */
+    padding: 2px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85); /* Warna teks menu sedikit gelap transparan seperti pada gambar */
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff; /* Berubah menjadi putih terang saat di-hover */
+}
+
+/* Penyesuaian jarak container form dari navbar */
+.container {
+    max-width: 550px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 40px auto; /* Memberi jarak atas dan bawah dari navbar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444444;
+}
+
+/* --- INPUT CONTROLS --- */
+input[type="text"],
+select,
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* --- RADIO & CHECKBOX --- */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.radio-group label,
+.checkbox-group label {
+    font-weight: normal;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    display: block;
+}
+
+/* --- ERROR MESSAGES --- */
+.error {
+    color: #d9534f;
+    font-size: 0.85em;
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- SUBMIT BUTTON --- */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #8c3cd6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-radius 0.2s ease;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c38fe6;
+    border-radius: 10px;
+}

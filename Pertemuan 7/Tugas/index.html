@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registrasi Event - Resto Nusantara</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo-container">
+      <img src="logorestonusantara.jpg" alt="Logo Resto Nusantara" class="logo-img">
+      <span class="logo-text">RESTO NUSANTARA</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#fasilitas">Fasilitas</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- KONTAINER UTAMA FORM -->
+  <div class="container">
+    <h2>Form Registrasi Event</h2>
+    <form id="eventForm" action="#" method="POST" enctype="multipart/form-data" novalidate>
+      
+      <!-- Input Text: Nama Lengkap -->
+      <div class="form-group">
+        <label for="nama">Nama Lengkap *</label>
+        <input type="text" id="nama" name="nama">
+        <span class="error" id="errorNama"></span>
+      </div>
+
+      <!-- Select: Kategori Peserta -->
+      <div class="form-group">
+        <label for="kategori">Kategori Peserta *</label>
+        <select id="kategori" name="kategori">
+          <option value="">-- Pilih Kategori --</option>
+          <option value="Mahasiswa">Mahasiswa</option>
+          <option value="Umum">Umum</option>
+          <option value="Pelajar">Pelajar</option>
+        </select>
+        <span class="error" id="errorKategori"></span>
+      </div>
+
+      <!-- Radio Button: Jenis Kehadiran -->
+      <div class="form-group">
+        <label>Jenis Kehadiran *</label>
+        <div class="radio-group">
+          <label><input type="radio" name="kehadiran" value="Offline"> Offline (Tatap Muka)</label>
+          <label><input type="radio" name="kehadiran" value="Online"> Online (Zoom)</label>
+        </div>
+        <span class="error" id="errorKehadiran"></span>
+      </div>
+
+      <!-- Textarea: Alasan Mengikuti Event -->
+      <div class="form-group">
+        <label for="alasan">Alasan Mengikuti Event</label>
+        <textarea id="alasan" name="alasan" rows="3"></textarea>
+      </div>
+
+      <!-- Upload: Kartu Identitas/KTP -->
+      <div class="form-group">
+        <label for="berkas">Upload Kartu Identitas (Max 2MB, PDF/JPG/PNG) *</label>
+        <input type="file" id="berkas" name="berkas">
+        <span class="error" id="errorBerkas"></span>
+      </div>
+
+      <!-- Checkbox: Syarat & Ketentuan -->
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="setuju" name="setuju"> Saya menyetujui syarat & ketentuan berlaku *
+        </label>
+        <span class="error" id="errorSetuju"></span>
+      </div>
+
+      <button type="submit">Daftar Sekarang</button>
+    </form>
+  </div>
+
+  <!-- Script Validasi JavaScript -->
+  <script>
+    document.getElementById('eventForm').addEventListener('submit', function(e) {
+      let valid = true;
+
+      // Bersihkan pesan error sebelumnya
+      document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+      // Validasi 1: Nama Lengkap (Minimal 3 Karakter)
+      const nama = document.getElementById('nama').value.trim();
+      if (nama === '' || nama.length < 3) {
+        document.getElementById('errorNama').textContent = 'Nama wajib diisi minimal 3 karakter.';
+        valid = false;
+      }
+
+      // Validasi 2: Select Kategori
+      const kategori = document.getElementById('kategori').value;
+      if (kategori === '') {
+        document.getElementById('errorKategori').textContent = 'Silakan pilih kategori peserta.';
+        valid = false;
+      }
+
+      // Validasi 3: Radio Kehadiran
+      const kehadiran = document.querySelector('input[name="kehadiran"]:checked');
+      if (!kehadiran) {
+        document.getElementById('errorKehadiran').textContent = 'Silakan pilih jenis kehadiran.';
+        valid = false;
+      }
+
+      // Validasi 4: File Upload (Ukuran & Ekstensi)
+      const berkas = document.getElementById('berkas').files[0];
+      if (!berkas) {
+        document.getElementById('errorBerkas').textContent = 'Wajib mengunggah berkas identitas.';
+        valid = false;
+      } else {
+        const allowedExtensions = ['image/jpeg', 'image/png', 'application/pdf'];
+        if (!allowedExtensions.includes(berkas.type)) {
+          document.getElementById('errorBerkas').textContent = 'Format berkas harus JPG, PNG, atau PDF.';
+          valid = false;
+        } else if (berkas.size > 2 * 1024 * 1024) { // Batas 2MB
+          document.getElementById('errorBerkas').textContent = 'Ukuran berkas maksimal 2MB.';
+          valid = false;
+        }
+      }
+
+      // Validasi 5: Checkbox Persetujuan
+      const setuju = document.getElementById('setuju').checked;
+      if (!setuju) {
+        document.getElementById('errorSetuju').textContent = 'Anda harus menyetujui syarat & ketentuan.';
+        valid = false;
+      }
+
+      if (!valid) {
+        e.preventDefault(); // Mencegah form terkirim jika ada error
+      }
+    });
+  </script>
+
+</body>
+</html>

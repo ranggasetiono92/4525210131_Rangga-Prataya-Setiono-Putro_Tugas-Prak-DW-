@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Profile Restoran - Design System</title>
+    <!-- Menghubungkan CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+    <div class="logo-container">
+        <img src="logorestonusantara.jpg" alt="Logo Resto Nusantara" class="logo-img">
+        <span class="logo-text">RESTO NUSANTARA</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#fasilitas">Fasilitas</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+</nav>
+    <!-- LAYOUT UTAMA -->
+    <main>
+        <!-- Head Banner / Beranda -->
+        <section id="beranda" class="head-banner">
+            <h1>Selamat Datang di Resto Nusantara</h1>
+            <p>Nikmati cita rasa kuliner autentik Indonesia dengan suasana modern dan pelayanan terbaik untuk keluarga Anda.</p>
+            <div class="search-box">
+                <input type="text" class="form-control" placeholder="Cari menu favorit Anda...">
+                <button class="btn">Cari</button>
+            </div>
+        </section>
+
+        <!-- Area Konten Utama: Menu Unggulan -->
+        <section class="content-section">
+            <h2>Menu Unggulan Restoran</h2>
+            <div class="card-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-img"> <img src="images.jpg" alt=""> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Nasi Goreng Spesial</h3>
+                        <p class="card-text">Nasi goreng rempah tradisional disajikan dengan sate ayam, telur mata sapi, dan kerupuk udang.</p>
+                        <div class="price-tag">Rp 35.000</div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-img"> <img src="images (1).jpg" alt=""> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Soto Betawi Asli</h3>
+                        <p class="card-text">Daging empuk dengan kuah santan dan susu yang gurih, dilengkapi emping melinjo hangat.</p>
+                        <div class="price-tag">Rp 45.000</div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-img"> <img src="images (2).jpg" alt=""> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Es Campur Segar</h3>
+                        <p class="card-text">Minuman dingin manis berisi aneka buah segar, agar-agar, cincau, dan sirup spesial.</p>
+                        <div class="price-tag">Rp 20.000</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSI 1: TENTANG KAMI -->
+        <section id="tentang" class="content-section info-section">
+            <h2>Tentang Kami</h2>
+            <div class="info-card">
+                <p>Resto Nusantara didirikan dengan misi memperkenalkan keanekaragaman kuliner tradisional Indonesia dengan sajian higienis dan bahan-bahan berkualitas tinggi. Didukung oleh koki berpengalaman, kami menghadirkan cita rasa masakan rumah yang otentik dan ramah di kantong.</p>
+            </div>
+        </section>
+
+        <!-- SEKSI 2: FASILITAS -->
+        <section id="fasilitas" class="content-section">
+            <h2>Fasilitas Restoran</h2>
+            <div class="card-grid">
+                <div class="card feature-card">
+                    <div class="feature-icon">📶</div>
+                    <h3 class="card-title">Wi-Fi Cepat Gratis</h3>
+                    <p class="card-text">Koneksi internet stabil untuk Anda yang ingin bekerja atau bersantai.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">❄️</div>
+                    <h3 class="card-title">Ruang AC & VIP</h3>
+                    <p class="card-text">Ruangan dingin yang nyaman serta ruang privat untuk pertemuan keluarga atau bisnis.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">🅿️</div>
+                    <h3 class="card-title">Area Parkir Luas</h3>
+                    <p class="card-text">Lahan parkir aman dan luas untuk kendaraan roda dua maupun roda empat.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">🕌</div>
+                    <h3 class="card-title">Mushola Bersih</h3>
+                    <p class="card-text">Fasilitas tempat beribadah yang bersih, nyaman, dan lengkap dengan tempat wudhu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSI 3: LAYANAN -->
+        <section id="layanan" class="content-section">
+            <h2>Layanan Kami</h2>
+            <div class="card-grid">
+                <div class="card feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3 class="card-title">Dine-In & Takeaway</h3>
+                    <p class="card-text">Layanan makan di tempat dengan suasana nyaman atau bungkus bawa pulang.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">🛵</div>
+                    <h3 class="card-title">Pesan Antar (Delivery)</h3>
+                    <p class="card-text">Pengiriman langsung ke rumah Anda melalui aplikasi online favorit Anda.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">🎉</div>
+                    <h3 class="card-title">Catering & Events</h3>
+                    <p class="card-text">Layanan prasmanan dan nasi kotak untuk berbagai acara ulang tahun, syukuran, atau kantor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSI 4: KONTAK -->
+        <section id="kontak" class="content-section">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Resto Nusantara</h3>
+                    <p>📍 <strong>Alamat:</strong> Jl. Raya Pajajaran No. 123, Bogor, Jawa Barat</p>
+                    <p>📞 <strong>Telepon/WA:</strong> +62 812-3456-7890</p>
+                    <p>✉️ <strong>Email:</strong> info@restonusantara.com</p>
+                    <p>⏰ <strong>Jam Operasional:</strong> Setiap Hari (10.00 - 22.00 WIB)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Resto Nusantara. Hak Cipta Dilindungi Undang-Undang. Kontak: info@restonusantara.com | Telp: (021) 555-8989</p>
+    </footer>
+
+</body>
+</html>

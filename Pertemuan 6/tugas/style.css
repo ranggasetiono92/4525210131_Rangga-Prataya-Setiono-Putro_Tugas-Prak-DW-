@@ -1,0 +1,350 @@
+/* --- DESIGN SYSTEM TOKENS --- */
+:root {
+    --primary: #573CFA;
+    --primary-hover: #452ee5;
+    --secondary: #FB8D1A;
+    --neutral-dark: #1C1A27;
+    --neutral-light: #F9F9FB;
+    --white: #FFFFFF;
+    --danger: #E8083E;
+    --success: #02864A;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(28, 26, 39, 0.08);
+}
+
+/* --- GLOBAL STYLES --- */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling untuk navigasi */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--neutral-light);
+    color: var(--neutral-dark);
+    line-height: 1.6;
+}
+
+/* --- NAVBAR --- */
+/* --- HEADER / NAVBAR UTAMA --- */
+nav {
+    /* Background gradasi biru seperti contoh */
+    background: linear-gradient(90deg, #452ee5 0%, #573CFA 50%, #9e54fe 100%);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Kontainer Logo dan Teks Agar Sejajar */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Jarak antara gambar logo dan teks */
+}
+
+/* KUNCI UTAMA: Mengatur ukuran foto/logo agar tidak menutupi header */
+.logo-img {
+    width: 50px;       /* Lebar logo diatur pas */
+    height: 50px;      /* Tinggi logo diatur pas */
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    border-radius: 50%; /* Membuat logo berbentuk lingkaran elegan */
+    border: 2px solid #ffffff; /* Garis tepi putih tipis */
+}
+
+/* Teks Nama Brand di Header */
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+/* Menu Navigasi di Sebelah Kanan */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--neutral-dark);
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* --- MAIN LAYOUT --- */
+main {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+/* Head Banner */
+.head-banner {
+    background: linear-gradient(135deg, var(--primary), #7b65fc);
+    color: var(--white);
+    padding: 48px 32px;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.head-banner h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.head-banner p {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+/* Form Controls & Buttons */
+.search-box {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+}
+
+.btn {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #e07d13;
+}
+
+/* Content Section */
+.content-section {
+    margin-bottom: 48px;
+    scroll-margin-top: 90px; /* Offset scroll agar tidak tertutup Navbar sticky */
+}
+
+.content-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-left: 4px solid var(--primary);
+    padding-left: 12px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* Card Style */
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(28, 26, 39, 0.12);
+}
+
+.card-img {
+    height: 140px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 10px;
+    font-weight: 400;
+}
+.card-img {
+    width: 100%;       /* Lebar memenuhi card */
+    height: 160px;     /* Tinggi tetap/seragam */
+    overflow: hidden;  /* Menyembunyikan bagian gambar yang berlebih */
+}
+
+/* Memastikan elemen <img> di dalam card-img ikut proporsional */
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar tidak gepeng dan terpotong rapi */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.price-tag {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+/* Seksi Spesifik: Tentang Kami */
+.info-card {
+    background: var(--white);
+    padding: 24px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Seksi Spesifik: Fasilitas & Layanan */
+.feature-card {
+    padding: 24px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+/* Seksi Spesifik: Kontak */
+.contact-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 24px;
+}
+
+.contact-info, .contact-form {
+    background: var(--white);
+    padding: 24px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-info h3, .contact-form h3 {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--neutral-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE MOBILE VERSION --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .head-banner {
+        padding: 32px 20px;
+    }
+
+    .head-banner h1 {
+        font-size: 26px;
+    }
+
+    main {
+        margin: 16px auto;
+        padding: 0 12px;
+    }
+}
